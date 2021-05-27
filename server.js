@@ -36,6 +36,12 @@ function newConnection(client) {
         console.log(`Client message from ${client.id}: ${data}`);
     });
 
+    // send message from client to all other clients also connected to the server
+    client.on('chat', function(data) {
+        console.log(`Client message sent from ${client.id}: ${data.message}`);
+        client.broadcast.emit('chat', data);
+    });
+
     // Whenever someone disconnects this piece of code executed
     client.on('disconnect', function () {
         console.log(`Client disconnected: ${client.id}`);

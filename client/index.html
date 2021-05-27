@@ -8,7 +8,11 @@
 </head>
 <body>
     <h1>Hello World!</h1>
-    <p id="message"></p>
+    <p id="serverOutput">Server message: </p>
+    <p id="clientOutput">Message from other clients: </p>
+
+    <input id="chatBox" type="text" placeholder="Message"></input>
+    <button id="sendButton" type="text">Send</button>
         
     <!-- Require the socket.io for the client -->
     <script src="/socket.io/socket.io.js"></script>
