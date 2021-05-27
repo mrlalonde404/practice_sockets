@@ -2,7 +2,7 @@
 let express = require('express');  
 
 // make an express instance named app
-let app = express();  
+let app = express(); 
 
 // the port for the server to listen on
 const port = 3000;
@@ -11,7 +11,7 @@ const port = 3000;
 let server = app.listen(port);
 
 // make the server look into the client folder for the index.html and other js files the client needs
-app.use(express.static('/client'));
+app.use(express.static('client'));
 
 // log on the server waht port it is running on
 console.log(`Server is running on port: ${port}`);
@@ -36,7 +36,7 @@ function newConnection(client) {
         console.log(`Client message from ${client.id}: ${data}`);
     });
 
-    //W henever someone disconnects this piece of code executed
+    // Whenever someone disconnects this piece of code executed
     client.on('disconnect', function () {
         console.log(`Client disconnected: ${client.id}`);
     });
